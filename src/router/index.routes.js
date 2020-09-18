@@ -1,14 +1,17 @@
-const router = (route) => {
-  console.log(route);
-  switch (key) {
-    case value:
-      break;
+import {pages} from '../controllers/index';
 
+let content = document.getElementById('root');
+
+const router = async (route) => {
+  content.innerHTML = '';
+  switch (route) {
+    case '#/':
+      return content.appendChild(pages.home());
+    case '#/post':
+      return content.appendChild(await pages.posts());
     default:
-      break;
+      return content.appendChild(pages.notFound());
   }
 };
-
-//min35
 
 export {router};
